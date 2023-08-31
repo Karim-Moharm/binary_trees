@@ -12,12 +12,10 @@ int bt_height(const binary_tree_t *tree)
 	if (!tree)
 		return (0);
 
-	if (tree)
-	{
-		left = bt_height(tree->left) + 1;
-		right = bt_height(tree->right) + 1;
-		return ((left >= right) ? left : right);
-	}
+	
+	left = bt_height(tree->left) + 1;
+	right = bt_height(tree->right) + 1;
+	return ((left >= right) ? left : right);
 	return (0);
 }
 
@@ -38,8 +36,6 @@ int binary_tree_balance(const binary_tree_t *tree)
 
 	if (tree->right)
 		right = bt_height(tree->right);
-
-	printf("l= %d r=%d\n", left, right);
 
 	return (left - right);
 }
